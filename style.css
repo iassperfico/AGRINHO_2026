@@ -1,0 +1,279 @@
+/* ==========================================================================
+   VARIÁVEIS DE CORES E IDENTIDADE VISUAL
+   ========================================================================== */
+:root {
+    --verde-principal: #2E7D32;
+    --verde-escuro: #1B5E20;
+    --verde-claro: #E8F5E9;
+    --azul-tecnologico: #1565C0;
+    --tom-terra: #8D6E63;
+    --tom-terra-escuro: #4E342E;
+    --texto-escuro: #263238;
+    --texto-claro: #FFFFFF;
+    --cinza-fundo: #F4F6F6;
+    --fonte-titulo: 'Montserrat', sans-serif;
+    --fonte-corpo: 'Open Sans', sans-serif;
+    --transicao-suave: all 0.3s ease;
+}
+
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS E RESETS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fonte-corpo);
+    color: var(--texto-escuro);
+    line-height: 1.6;
+    background-color: var(--cinza-fundo);
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 0;
+}
+
+.text-center {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--verde-escuro);
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--azul-tecnologico);
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   CABEÇALHO E NAVEGAÇÃO
+   ========================================================================== */
+header {
+    background-color: var(--texto-claro);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: var(--transicao-suave);
+}
+
+header.scrolled {
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-family: var(--fonte-titulo);
+    font-size: 1.6rem;
+    color: var(--verde-principal);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--azul-tecnologico);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--texto-escuro);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transicao-suave);
+    position: relative;
+    padding: 5px 0;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--verde-principal);
+    transition: var(--transicao-suave);
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--verde-principal);
+}
+
+/* Menu Mobile (Hambúrguer) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--texto-escuro);
+    border-radius: 3px;
+    transition: var(--transicao-suave);
+}
+
+/* ==========================================================================
+   BANNER PRINCIPAL (HERO)
+   ========================================================================== */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), 
+                url('https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--texto-claro);
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.8rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 4px 10px rgba(0,0,0,0.5);
+    letter-spacing: -1px;
+}
+
+.hero-content p {
+    font-size: 1.6rem;
+    font-style: italic;
+    margin-bottom: 2.5rem;
+    color: var(--verde-claro);
+    font-weight: 600;
+    text-shadow: 1px 2px 5px rgba(0,0,0,0.5);
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--verde-principal);
+    color: var(--texto-claro);
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: var(--transicao-suave);
+    box-shadow: 0 4px 15px rgba(46, 125, 50, 0.4);
+}
+
+.btn:hover {
+    background-color: var(--verde-escuro);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(46, 125, 50, 0.6);
+}
+
+/* ==========================================================================
+   SEÇÕES DE CONTEÚDO
+   ========================================================================== */
+.bg-white { 
+    background-color: var(--texto-claro); 
+}
+
+/* Grid de Pilares */
+.grid-pilares {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--texto-claro);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    transition: var(--transicao-suave);
+    border-top: 6px solid var(--verde-principal);
+}
+
+.card:nth-child(2) { border-top-color: var(--azul-tecnologico); }
+.card:nth-child(3) { border-top-color: var(--tom-terra); }
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.card i {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-verde i { color: var(--verde-principal); }
+.card-azul i { color: var(--azul-tecnologico); }
+.card-terra i { color: var(--tom-terra); }
+
+.card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    color: var(--texto-escuro);
+}
+
+/* Layout Split (Lado a Lado) */
+.split-section {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.split-text, .split-image {
+    flex: 1;
+    min-width: 320px;
+}

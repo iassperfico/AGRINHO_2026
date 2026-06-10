@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte: Futuro Sustentável</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- VARIÁVEIS DE CORES E ESTILOS --- */
+        :root {
+            --verde-principal: #2E7D32;
+            --verde-escuro: #1B5E20;
+            --verde-claro: #E8F5E9;
+            --azul-tecnologico: #1565C0;
+            --tom-terra: #8D6E63;
+            --tom-terra-escuro: #4E342E;
+            --texto-escuro: #263238;
+            --texto-claro: #FFFFFF;
+            --cinza-fundo: #F4F6F6;
+            --fonte-titulo: 'Montserrat', sans-serif;
+            --fonte-corpo: 'Open Sans', sans-serif;
+        }
+
+        /* --- CONFIGURAÇÕES GERAIS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--fonte-corpo);
+            color: var(--texto-escuro);
+            line-height: 1.6;
+            background-color: var(--cinza-fundo);
+        }
+
+        h1, h2, h3 {
+            font-family: var(--fonte-titulo);
+            font-weight: 700;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 0;
+        }
+
+        .text-center {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--verde-escuro);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--azul-tecnologico);
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* --- CABEÇALHO E NAVEGAÇÃO --- */
+        header {
+            background-color: var(--texto-claro);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+        }
+
+        .logo {
+            font-family: var(--fonte-titulo);
+            font-size: 1.5rem;
+            color: var(--verde-principal);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--azul-tecnologico);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--texto-escuro);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--verde-principal);
+        }
+
+        /* --- BANNER PRINCIPAL (HERO) --- */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--texto-claro);
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            color: var(--verde-claro);
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--verde-principal);
+            color: var(--texto-claro);
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            background-color: var(--verde-escuro);
+            transform: translateY(-2px);
+        }
+
+        /* --- SEÇÃO: PILARES (GRID) --- */
+        .grid-pilares {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--texto-claro);
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border-top: 5px solid var(--verde-principal);
+        }
+
+        .card:nth-child(2) { border-top-color: var(--azul-tecnologico); }
+        .card:nth-child(3) { border-top-color: var(--tom-terra); }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card i {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-verde i { color: var(--verde-principal); }
+        .card-azul i { color: var(--azul-tecnologico); }
+        .card-terra i { color: var(--tom-terra); }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            color: var(--texto-escuro);
+        }
+
+        /* --- SEÇÃO: INOVAÇÃO E IMPACTO (CONTEÚDO LADO A LADO) --- */
+        .bg-white { background-color: var(--texto-claro); }
+
+        .split-section {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .split-text, .split-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .split-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .split-text h3 {
+            font-size: 2rem;
+            color: var(--verde-escuro);
+            margin-bottom: 1rem;
+        }
+
+        /* --- SEÇÃO: GRÁFICOS / INDICADORES --- */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .stat-box {
+            background: var(--verde-claro);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(46, 125, 50, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--verde-escuro);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--texto-escuro);
+        }
+
+        /* --- RODAPÉ --- */
+        footer {
+            background-color: var(--tom-terra-escuro);
+            color: var(--texto-claro);
+            padding: 3rem 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 2rem;
+        }
+
+        .footer-logo {
+            font-family: var(--fonte-titulo);
+            font-size: 1.5rem;
+            color: var(--texto-claro);
+            text-decoration: none;
+        }
+
+        .footer-links a {
+            color: var(--verde-claro);
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        .footer-copy {
+            text-align: center;
+            padding-top: 2rem;
+            color: #B0BEC5;
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            .split-section {
+                flex-direction: column;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-seedling"></i> Agro<span>Forte</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#agricultura">Agricultura</a></li>
+                <li><a href="#inovacao">Inovação</a></li>
+                <li><a href="#recursos">Recursos</a></li>
+                <li><a href="#futuro">Futuro</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Agro Forte: Futuro Sustentável</h1>
+            <p>“Produzir hoje, preservar para o amanhã”</p>
+            <a href="#agricultura" class="btn">Conheça Nossos Pilares</a>
+        </div>
+    </section>
+
+    <section id="agricultura" class="container">
+        <div class="text-center">
+            <h2 class="section-title">Compromisso com a Terra</h2>
+            <p>Unindo forças para equilibrar a alta produtividade do campo com o respeito máximo à biodiversidade.</p>
+        </div>
+        
+        <div class="grid-pilares">
+            <div class="card card-verde">
+                <i class="fa-solid fa-leaf"></i>
+                <h3>Agricultura Sustentável</h3>
+                <p>Uso de técnicas de manejo integrado de pragas, rotação de culturas e plantio direto para manter o solo vivo e produtivo por gerações.</p>
+            </div>
+            <div class="card card-azul">
+                <i class="fa-solid fa-droplet"></i>
+                <h3>Recursos Naturais</h3>
+                <p>Sistemas inteligentes de irrigação por gotejamento e monitoramento hídrico, garantindo desperdício zero de água nas plantações.</p>
+            </div>
+            <div class="card card-terra">
+                <i class="fa-solid fa-solar-panel"></i>
+                <h3>Energias Renováveis</h3>
+                <p>Integração de matrizes limpas, como energia solar e biomassa rústica, alimentando o maquinário e as estruturas do agronegócio.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="inovacao" class="bg-white">
+        <div class="container split-section">
+            <div class="split-image">
+                <img src="https://images.unsplash.com/photo-1592417817098-8f3d6eb19675?auto=format&fit=crop&w=800&q=80" alt="Tecnologia no Campo">
+            </div>
+            <div class="split-text">
+                <h3>Inovação Tecnológica e Redução de Impacto</h3>
+                <p>O futuro do agronegócio é digital. O uso de drones para mapeamento de lavouras, sensores IoT no solo e tratores autônomos orientados por GPS permite a aplicação exata de insumos.</p>
+                <br>
+                <p><strong>O resultado:</strong> Redução drástica de impactos ambientais, otimização do tempo e maximização da colheita sem expandir ilegalmente as fronteiras agrícolas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="recursos" class="container">
+        <div class="text-center">
+            <h2 class="section-title">Resultados que Geram Confiança</h2>
+            <p>Nossos indicadores comprovam que o progresso econômico caminha de mãos dadas com a preservação ambiental.</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-box">
+                <span class="stat-number"><i class="fa-solid fa-arrow-down"></i> 35%</span>
+                <span class="stat-label">Emissão de Carbono</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-number"><i class="fa-solid fa-arrow-up"></i> 40%</span>
+                <span class="stat-label">Eficiência Hídrica</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-number"><i class="fa-solid fa-chart-line"></i> +25%</span>
+                <span class="stat-label">Produtividade por Hectare</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-number"><i class="fa-solid fa-tree"></i> 100%</span>
+                <span class="stat-label">Áreas de Preservação Monitoradas</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="futuro" class="bg-white">
+        <div class="container split-section" style="flex-direction: row-reverse;">
+            <div class="split-image">
+                <img src="https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?auto=format&fit=crop&w=800&q=80" alt="Futuras Gerações">
+            </div>
+            <div class="split-text">
+                <h3>Legado para as Futuras Gerações</h3>
+                <p>Cuidar da terra hoje garante a segurança alimentar e climática dos nossos filhos e netos. Promovemos um ecossistema econômico rural próspero, inclusivo e que ensina o valor de manter as florestas em pé e as águas limpas.</p>
+                <br>
+                <p>Desenvolvimento sustentável não é uma meta distante, é a nossa prática diária no campo.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container" style="padding: 0;">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fa-solid fa-seedling"></i> Agro Forte
+                </div>
+                <div class="footer-links">
+                    <a href="#agricultura">Sobre Nós</a>
+                    <a href="#inovacao">Tecnologia</a>
+                    <a href="#recursos">Transparência</a>
+                </div>
+            </div>
+            <div class="footer-copy">
+                <p>&copy; 2026 Agro Forte - "Produzir hoje, preservar para o amanhã". Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
